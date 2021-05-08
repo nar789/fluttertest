@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/test.dart';
 
 void main() {
-  runApp(MyApp());
+  print('test');
+  runApp(new MaterialApp(
+    home: TestView(),
+  ));
+  //runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +29,7 @@ class MyApp extends StatelessWidget {
 
 class Page extends StatefulWidget {
   Page({this.title, this.number});
+
   final String title;
   final int number;
 
@@ -74,7 +80,6 @@ class _PageState extends State<Page> {
     );
   }
 }
-
 
 //////////
 class CounterDisplay extends StatelessWidget {
