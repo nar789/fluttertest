@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/models/person.dart';
+import 'package:provider/provider.dart';
 
 class TestView extends StatefulWidget {
   @override
@@ -16,6 +18,8 @@ class TestState extends State {
 
   @override
   Widget build(BuildContext context) {
+    final age = Provider.of<Person>(context);
+
     return Scaffold(
         appBar: AppBar(
           title: Text("This is test app"),
@@ -23,10 +27,10 @@ class TestState extends State {
         body: ListView(
           children: [
             ListTile(
-              onTap: () => _increment(),
+              onTap: () => [age.addingAge(10), _increment()],
               leading: Icon(Icons.home),
               title: Text("hi yo ${this._count}"),
-              subtitle: Text('nice'),
+              subtitle: Text('nice ${age.age}'),
               trailing: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/test.dart';
+import 'package:provider/provider.dart';
+
+import 'models/person.dart';
 
 void main() {
   print('test');
-  runApp(new MaterialApp(
-    home: TestView(),
+  runApp(MultiProvider(
+    providers: [ChangeNotifierProvider<Person>(create: (context) => Person(0))],
+    child: MaterialApp(
+      home: TestView(),
+    ),
   ));
   //runApp(MyApp());
 }
